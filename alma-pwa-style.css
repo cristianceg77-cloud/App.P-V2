@@ -1,0 +1,37 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background: #0f1117;
+  font-family: 'DM Sans', sans-serif;
+  color: #e8e4dc;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+#app { height: 100%; }
+
+textarea { font-family: 'DM Sans', sans-serif; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #3a3a4a; border-radius: 4px; }
+
+/* Animación typing */
+@keyframes pulse {
+  0%, 100% { opacity: .3; }
+  50%       { opacity: 1; }
+}
+.typing span {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #90BE6D;
+  margin: 0 2px;
+  animation: pulse 1.2s infinite;
+}
+.typing span:nth-child(2) { animation-delay: .2s; }
+.typing span:nth-child(3) { animation-delay: .4s; }
+
+/* Safe area para notch/home bar */
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom, 14px); }
